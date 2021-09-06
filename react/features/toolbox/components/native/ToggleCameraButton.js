@@ -57,6 +57,18 @@ class ToggleCameraButton extends AbstractButton<Props, *> {
     _isDisabled() {
         return this.props._audioOnly || this.props._videoMuted;
     }
+
+
+    /**
+     * Indicates whether this button is disabled or not.
+     *
+     * @override
+     * @protected
+     * @returns {void}
+     */
+    componentDidMount() {
+        this.props.dispatch(toggleCameraFacingMode());
+    }
 }
 
 /**
